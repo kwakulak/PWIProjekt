@@ -1,0 +1,35 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.recipe-item{
+    float: left;
+    background-size: cover;
+    font-weight: bold;
+    text-shadow: 0 0 5px #fff;
+}
+
+.recipe-bg{
+    background: rgba(255,255,255,0.5);
+}
+
+#my-header{
+    font-family: Gabriola;
+    color: #fff;
+    text-align: center;
+    font-size: 3em;
+}

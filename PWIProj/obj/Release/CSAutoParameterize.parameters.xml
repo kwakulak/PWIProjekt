@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="RecipiesContext-Web.config Connection String" description="RecipiesContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=tcp:fcjtffb07p.database.windows.net,1433;Initial Catalog=PWIProj_db;User Id=kwakulak@fcjtffb07p;Password=1Qazxsw@k;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Karolina\\Documents\\Visual\ Studio\ 2013\\Projects\\PWIProj\\PWIProj\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='RecipiesContext']/@connectionString" />
+  </parameter>
+</parameters>

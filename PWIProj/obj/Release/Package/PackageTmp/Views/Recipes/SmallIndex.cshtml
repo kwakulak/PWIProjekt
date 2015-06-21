@@ -1,0 +1,34 @@
+﻿@model PWIProj.Models.Recipe
+@using MyResources = PWIProj.Resources.Strings;
+           @{
+var option = new AjaxOptions()
+    {
+        UpdateTargetId = "create",
+        InsertionMode = InsertionMode.Replace
+    };
+    }
+<div class="col-md-12 recipe-item" style="background-image: url('@Model.PictureURL'); ">
+    <div class="recipe-bg">
+        <h3>@Model.Title</h3>
+        <small>
+            @MyResources.Added: @Model.AddDate
+        </small>
+        <h6>
+            @MyResources.Category: @Model.Category
+        </h6>
+        <p>
+            @Model.Description
+        </p>
+        <small>
+            @using (Ajax.BeginForm("GetEdit", new {@id = Model.ID}, option))
+            {
+                @Html.AntiForgeryToken()
+               <input type="submit" class="btn btn-info" value="@MyResources.EditRecipe" />
+            }
+            @*@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |*@
+    @*@Html.ActionLink("Details", "Details", new { id = Model.ID }) |*@
+         @*   @Html.ActionLink("Delete", "Delete", new { id = Model.ID })*@
+        </small>
+        <hr />
+    </div>
+</div>

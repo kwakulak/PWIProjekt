@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="PWIProj" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Karolina\\Documents\\Visual\ Studio\ 2013\\Projects\\PWIProj\\PWIProj\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Karolina\\Documents\\Visual\ Studio\ 2013\\Projects\\PWIProj\\PWIProj\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="RecipiesContext-Web.config Connection String" description="" value="Data Source=tcp:fcjtffb07p.database.windows.net,1433;Initial Catalog=PWIProj_db;User Id=kwakulak@fcjtffb07p;Password=1Qazxsw@k" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Karolina\\Documents\\Visual\ Studio\ 2013\\Projects\\PWIProj\\PWIProj\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='RecipiesContext']/@connectionString" />
+  </parameter>
+</parameters>

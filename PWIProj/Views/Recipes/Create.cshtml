@@ -1,0 +1,61 @@
+﻿@model PWIProj.Models.Recipe
+@using MyResources = PWIProj.Resources.Strings;
+
+@{
+    ViewBag.Title = "Create";
+    
+}
+
+<div class="col-md-12">
+
+    @using (Ajax.BeginForm("Create", new AjaxOptions() {InsertionMode = InsertionMode.InsertBefore, UpdateTargetId="recipies" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            <h4>@MyResources.Create</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EnumDropDownListFor(model => model.Category, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PictureURL, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PictureURL, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PictureURL, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-info">@MyResources.Create</button>
+
+
+
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

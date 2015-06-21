@@ -1,0 +1,46 @@
+﻿@using MyResources = PWIProj.Resources.Strings;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@MyResources.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        @if (Session["cookiesHidden"] == "0")
+        {
+            using (@Ajax.BeginForm("HideCookies", new AjaxOptions() { UpdateTargetId = "cookies-container", InsertionMode=InsertionMode.Replace }))
+            {
+                <div id="cookies-container" style="position: absolute; top: 0; height: 20px;z-index: 999;">
+                    <div id="cookies-info" style="width: 100%; background: transparent; color: #fff;">
+                        Site uses cookies
+                        <input type="submit" value="X" class="btn btn-info" />
+                    </div>
+                </div>
+            }
+        }
+        <div class="container">
+                <h1 id="my-header">@MyResources.Title</h1>
+        </div>
+    </div>
+    
+    <div class="container body-content" style="margin-top: 50px;">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Karolina Wakulak</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
